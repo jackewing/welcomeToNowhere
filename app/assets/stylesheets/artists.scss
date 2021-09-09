@@ -11,6 +11,7 @@ body {
     flex-direction: row;
   }
   img {
+    filter: grayscale(100%);
     display: block;
     max-width: 500px;
     max-height: 400px;
