@@ -5,8 +5,7 @@
     <h3><%= @artists[@index][:name] %></h3>
     <p><%= @artists[@index][:city] %></p>
     <p><%= @artists[@index][:genre] %></p>
-    <p><%= @artists[@index][:performer_details] %></p>
-    <a href="<%= @artists[@index][:links] %>">Links</a>
+    <a href="<%= @artists[@index][:links] %>">Listen to <%= @artists[@index][:name] %></a>
     <p><%= @artists[@index][:long_description] %></p>
     <a href="/welcometonowhere">Back</a>
   </div>
