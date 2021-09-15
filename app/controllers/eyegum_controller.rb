@@ -16,5 +16,8 @@ class EyegumController < ApplicationController
   end
 
   def other_events; end
-  def about_us; end
+
+  def about_us
+    @background_colour = Colours.avocado
+  end
 end
