@@ -1,3 +1,14 @@
+.texture {
+  width: 100%;
+  height: 100%;
+  background-image: asset_url("NOISE.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  pointer-events: none;
+}
+
 .eyegum {
   &::after {
     position: absolute;

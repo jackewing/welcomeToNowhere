@@ -26,7 +26,11 @@ const allImages = importAll(
 
 document.addEventListener("turbolinks:load", () => {
   if (document.getElementsByClassName("hand").length) {
-    setInterval(() => {
+    if (interval) {
+      clearInterval(interval);
+    }
+
+    var interval = setInterval(() => {
       document.getElementsByClassName("hand")[0].classList.toggle("alt");
     }, 3000);
   }

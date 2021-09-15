@@ -15,7 +15,9 @@ class EyegumController < ApplicationController
         .filter { |act| act['Event title'].present? }
   end
 
-  def other_events; end
+  def other_events
+    @background_colour = Colours.avocado
+  end
 
   def about_us
     @background_colour = Colours.avocado
