@@ -23,12 +23,23 @@ document.addEventListener("turbolinks:load", () => {
     }, 3000);
   }
 
-  document
-    .querySelectorAll(".wednesdays .coming-up .top")
-    .forEach((element) => {
+  if (document.getElementsByClassName("wednesdays").length) {
+    document
+      .querySelectorAll(".wednesdays .coming-up .top")
+      .forEach((element) => {
+        element.addEventListener("click", function (e) {
+          element.nextElementSibling.classList.toggle("open");
+          element.classList.toggle("open");
+        });
+      });
+  }
+
+  if (document.getElementsByClassName("faqs").length) {
+    document.querySelectorAll(".wtn .faqs .top").forEach((element) => {
       element.addEventListener("click", function (e) {
         element.nextElementSibling.classList.toggle("open");
         element.classList.toggle("open");
       });
     });
+  }
 });

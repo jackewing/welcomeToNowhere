@@ -11,13 +11,11 @@
     <div class="star"></div>
     <div class="sawmill-bladee"></div>
     <div class="arch">
-
       <div id="wtn-video"></div>
     </div>
   </div>
   <div class="main">
     <div class="left">
-
       <p>Aotearoa’s coolest little festival, located in the rural Manawatu, featuring both leading and up-and-coming
         independent
         artists from around the country. Join us for 2.5 days of music and art, among a welcoming community.</p>
@@ -36,15 +34,50 @@
     </div>
   </div>
   <div class="lineup">
-    <h2></h2>
+    <p>Lineup: Coming Soon</p>
   </div>
   <div class="faqs">
+    <h3>FAQs</h3>
+    <% @faqs.each do |question| %>
+      <div class="question">
+        <div class="top">
+          <p class='date'>
+            <%= question['Question'] %>
+          </p>
+          <p class="large">
+            <%= question['Question'] %>
+          </p>
+        </div>
 
+        <div class="bottom">
+          <div class="about">
+            <p class="large">
+              <%= question['Answer'] %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% end %>
   </div>
   <div class="gallery">
-    <div class="left"></div>
-    <div class="right"></div>
+    <h3>Gallery</h3>
+    <div class="gallery-container">
+      <% @gallery.each do |image| %>
+        <a href="<%= image[:image_url] %>" style="background-image: url(<%= image[:image_url] %>)">
+          <p>
+            <%= image[:name] %>
+              <%= image[:tags] %>
+          </p>
+        </a>
+        <% end %>
+    </div>
   </div>
+  <script type="text/javascript" src="/javascripts/lib/lightbox.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("turbolinks:load", function () {
+      new SimpleLightbox({ elements: '.gallery-container a' });
+    })
+  </script>
   <!-- <iframe id="iframe-container" src="https://events.humanitix.com/welcome-to-nowhere-2022/tickets?w=true&p=%236621c0"
     width="100%" height="600px" frameborder="0"></iframe>
     <script>

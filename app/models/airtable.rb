@@ -10,6 +10,13 @@ class Airtable
       .fetch([self, resource], expires_in: 10.hours) { self.send(resource) }
   end
 
+  def self.faqs
+    Airrecord
+      .table(ENV['airtable_key'], @table_id, "W2N FAQ's")
+      .all
+      .map(&:fields)
+  end
+
   def self.wednesday_image
     img =
       Airrecord
@@ -98,11 +105,16 @@ class Airtable
   end
 
   def self.wtn_gallery
-    Airrecord.table(
-      ENV['airtable_key'],
-      @table_id,
-      'Welcome to Nowhere Gallery',
-    )
+    Airrecord
+      .table(ENV['airtable_key'], @table_id, 'Welcome to Nowhere Gallery')
+      .all
+      .map do |image|
+        {
+          name: image['Name'],
+          image_url: image(image, 'Attachments'),
+          tags: image['Tags'],
+        }
+      end
   end
 
   private

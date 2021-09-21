@@ -5,14 +5,20 @@ class WelcomeToNowhereController < ApplicationController
     @background_colour = Colours.white
     @artists = artists
     @colours = colours
+    @faqs = faqs
+    @gallery = gallery
   end
 
   def artists
     Airtable.fetch(:artists)
   end
 
+  def faqs
+    Airtable.fetch(:faqs)
+  end
+
   def gallery
-    Airtable.fetch(:artists)
+    Airtable.fetch(:wtn_gallery)
   end
 
   def colours

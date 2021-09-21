@@ -10,7 +10,7 @@
     padding: 30px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    border-bottom: 2px solid $black;
+
     @media screen and (max-width: $breakpoint) {
       border-bottom: none;
       grid-template-columns: 1fr;
@@ -95,7 +95,7 @@
   }
   .main {
     padding-left: 30px;
-    padding-top: 30px;
+    padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     @media screen and (max-width: $breakpoint) {
@@ -117,7 +117,7 @@
           max-width: 250px;
           height: 350px;
           margin: auto;
-          margin-top: 30px;
+          margin-top: 25px;
           margin-bottom: 30px;
           background-position: center;
           background-size: contain;
@@ -200,6 +200,229 @@
       }
       @media screen and (max-width: $breakpoint) {
         display: none;
+      }
+    }
+  }
+  .lineup {
+    padding-left: 30px;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: $breakpoint) {
+      grid-template-columns: 1fr;
+      padding: 15px;
+      padding-top: 57px;
+    }
+    p {
+      font-family: Surt Light;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 26px;
+      line-height: 31px;
+      letter-spacing: -0.01em;
+      @media screen and (max-width: $breakpoint) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+  .faqs {
+    padding: 30px;
+    @media screen and (max-width: $breakpoint) {
+      padding: 15px;
+    }
+    .top {
+      cursor: pointer;
+      border-bottom: 2px solid $black;
+      @media screen and (min-width: $breakpoint) {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 45px;
+        p {
+          padding: 10px;
+          margin: 0;
+        }
+      }
+      @media screen and (max-width: $breakpoint) {
+        padding: 15px 0;
+      }
+      position: relative;
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        right: 15px;
+        bottom: 30px;
+        border-bottom: 2px solid $black;
+        width: 10px;
+        display: block;
+        @media screen and (min-width: $breakpoint) {
+          bottom: 25px;
+        }
+      }
+      &:after {
+        transform: rotate(90deg);
+      }
+      &.open {
+        &:after {
+          display: none;
+        }
+        border-bottom: none;
+      }
+      .large {
+        display: block;
+        @media screen and (min-width: $breakpoint) {
+          display: none;
+        }
+      }
+      .date {
+        @media screen and (min-width: $breakpoint) {
+          margin-right: auto;
+          padding-left: 0;
+        }
+      }
+    }
+    .bottom {
+      padding-top: 0px;
+      overflow: hidden;
+      max-height: 0;
+      p {
+        padding-bottom: 15px;
+        @media screen and (min-width: $breakpoint) {
+          margin: 0;
+          padding-top: 15px;
+          text-align: left;
+        }
+      }
+      .about {
+        padding-top: 15px;
+        @media screen and (min-width: $breakpoint) {
+          float: left;
+          padding-top: 0px;
+        }
+      }
+      .large {
+        display: none;
+        @media screen and (min-width: $breakpoint) {
+          display: block;
+        }
+      }
+      &.open {
+        max-height: none;
+        border-bottom: 2px solid $black;
+      }
+      img {
+        margin: 0 auto 15px;
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        @media screen and (min-width: $breakpoint) {
+          float: right;
+          width: auto;
+          max-height: 400px;
+          padding-top: 15px;
+        }
+      }
+    }
+    h3 {
+      font-family: Surt Light;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 33px;
+      letter-spacing: -0.01em;
+      text-align: left;
+      @media screen and (max-width: $breakpoint) {
+        margin-top: 55px;
+        font-size: 22px;
+        line-height: 33px;
+      }
+    }
+    p.date {
+      font-family: Surt Light;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 33px;
+      letter-spacing: -0.01em;
+      text-align: right;
+      display: block;
+      @media screen and (max-width: $breakpoint) {
+        padding: 0;
+        padding-bottom: 10px;
+        margin: 0;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: left;
+      }
+    }
+    p {
+      font-family: Surt Light;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 33px;
+      letter-spacing: -0.01em;
+      text-align: right;
+      @media screen and (max-width: $breakpoint) {
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: left;
+      }
+    }
+  }
+  .gallery {
+    padding: 30px;
+    padding-bottom: 55px;
+    @media screen and (max-width: $breakpoint) {
+      padding: 15px;
+    }
+    h3 {
+      font-family: Surt Light;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 33px;
+      letter-spacing: -0.01em;
+      text-align: left;
+      @media screen and (max-width: $breakpoint) {
+        margin-top: 55px;
+        font-size: 22px;
+        line-height: 33px;
+      }
+    }
+    .gallery-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 15px;
+      row-gap: 15px;
+      @media screen and (min-width: $breakpoint) {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      a {
+        display: block;
+        min-height: 200px;
+        position: relative;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        p {
+          font-family: Surt Light;
+          font-style: normal;
+          font-weight: 300;
+          letter-spacing: -0.01em;
+          text-align: left;
+          background-color: $black;
+          color: $white;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          margin: 0;
+          padding: 5px;
+          font-size: 14px;
+        }
       }
     }
   }
