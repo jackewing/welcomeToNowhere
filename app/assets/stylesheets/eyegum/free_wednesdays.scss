@@ -3,6 +3,8 @@
     color: $black;
   }
   .splash {
+    padding-left: 30px;
+    padding-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     @media screen and (max-width: $breakpoint) {
@@ -11,32 +13,23 @@
       padding-top: 57px;
     }
     .left {
-      padding-left: 30px;
-      padding-top: 30px;
       max-width: 575px;
       @media screen and (max-width: $breakpoint) {
         padding: 0px;
         max-width: none;
       }
       .img-sm-container {
-        height: 420px;
         position: relative;
-        .image-sm-1 {
-          border-radius: 500px 500px 0px 0px;
-          position: absolute;
-          min-width: 168.33px;
-          height: 227.66px;
-          right: 0px;
-          top: 30px;
-          background-color: $black;
-        }
-        .image-sm-2 {
-          position: absolute;
-          min-width: 103px;
-          height: 139.3px;
-          left: 0px;
-          bottom: 45px;
-          background-color: $black;
+        .image {
+          border-top-left-radius: 10000px;
+          border-top-right-radius: 10000px;
+          max-width: 250px;
+          height: 350px;
+          margin: auto;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          background-position: center;
+          background-size: contain;
         }
         @media screen and (max-width: $breakpoint) {
           display: block;
@@ -123,7 +116,6 @@
         border-top-right-radius: 10000px;
         max-width: 480px;
         height: 600px;
-        background: red;
         margin-left: auto;
         margin-top: 100px;
       }
@@ -307,8 +299,24 @@
         grid-template-columns: repeat(5, 1fr);
       }
       div {
-        background-color: grey;
         min-height: 200px;
+        position: relative;
+        background-size: contain;
+        p {
+          font-family: Surt Light;
+          font-style: normal;
+          font-weight: 300;
+          letter-spacing: -0.01em;
+          text-align: left;
+          background-color: $black;
+          color: $white;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          margin: 0;
+          padding: 5px;
+          font-size: 14px;
+        }
       }
     }
   }

@@ -11,6 +11,10 @@ class WelcomeToNowhereController < ApplicationController
     Airtable.fetch(:artists)
   end
 
+  def gallery
+    Airtable.fetch(:artists)
+  end
+
   def colours
     [
       'rgba(243, 166, 131,1.0)',

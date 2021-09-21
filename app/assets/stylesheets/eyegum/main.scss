@@ -1,12 +1,14 @@
 .texture {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-image: asset_url("NOISE.png");
   position: absolute;
   top: 0;
   left: 0;
-  background-size: cover;
+  background-size: 100%;
   pointer-events: none;
+  mix-blend-mode: normal;
+  background-repeat: repeat-y;
 }
 
 .eyegum {
@@ -16,7 +18,7 @@
     height: 0;
     overflow: hidden;
     z-index: -1; // hide images
-    content: asset_url("homepg_illustration_1")
+    content: asset_url("EYE001_illustration1_v2")
       asset_url("homepg_illustration_2") asset_url("logotype.svg")
       asset_url("menu_circle.svg") asset_url("menu_circle_HOVER.svg");
   }
@@ -48,7 +50,7 @@
       }
     }
     .hand {
-      background-image: asset_url("homepg_illustration_1");
+      background-image: asset_url("EYE001_illustration1_v2");
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;

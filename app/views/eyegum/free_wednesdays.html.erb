@@ -7,8 +7,7 @@
       </h1>
       <p>Most weeks at San Fran, come check out upcoming local artists, totally free.</p>
       <div class="img-sm-container">
-        <div class="image-sm-1" alt="Eyegum Wednesdays at San Fran"></div>
-        <div class="image-sm-2" alt="Eyegum Wednesdays at San Fran"></div>
+        <div style="background-image: url(<%= @background_image %>)" class="image" alt="Eyegum Wednesdays at San Fran"></div>
       </div>
       <a href="https://airtable.com/shrrtHtc9IA0MbXcK">
         Apply To Play
@@ -16,7 +15,7 @@
       </a>
     </div>
     <div class="right">
-      <div class="image" alt="Eyegum Wednesdays at San Fran"></div>
+      <div style="background-image: url(<%= @background_image %>)" class="image" alt="Eyegum Wednesdays at San Fran"></div>
     </div>
   </div>
   <div class="coming-up" style="background-color: <%= @background_colour %>;">
@@ -55,12 +54,11 @@
   <div class="gallery" style="background-color: <%= @background_colour %>;">
     <h3>Gallery</h3>
     <div class="gallery-container">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <% @gallery.each do |image| %>
+        <div style="background-image: url(<%= image[:image_url] %>)">
+          <p><%= image[:name] %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

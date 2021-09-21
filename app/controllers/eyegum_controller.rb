@@ -8,7 +8,12 @@ class EyegumController < ApplicationController
   end
 
   def free_wednesdays
+    @background_image = Airtable.fetch(:wednesday_image)
+
     @background_colour = Colours.white
+
+    @gallery = Airtable.fetch(:wednesday_gallery)
+
     @upcoming_acts =
       Airtable
         .fetch(:upcoming_acts)

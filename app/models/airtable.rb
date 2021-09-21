@@ -1,27 +1,46 @@
-module Airtable
+class Airtable
+  @table_id = 'app47yxhBJJGy9O2V'
+
   def self.fetch(resource)
     # caches if in development
-    # return ENV['RACK_ENV'] == 'development' && self.send(resource)
+    return ENV['RACK_ENV'] == 'development' && self.send(resource)
 
     Rails
       .cache
       .fetch([self, resource], expires_in: 10.hours) { self.send(resource) }
   end
 
+  def self.wednesday_image
+    img =
+      Airrecord
+        .table(ENV['airtable_key'], @table_id, 'Wednesday main')
+        .all
+        .map(&:fields)
+        .filter { |record| record['Attachments'].present? }
+        .first
+
+    image(img, 'Attachments')
+  end
+
+  def self.wednesday_gallery
+    Airrecord
+      .table(ENV['airtable_key'], @table_id, 'Wednesday Gallery')
+      .all
+      .map do |image|
+        { name: image['Name'], image_url: image(image, 'Attachments') }
+      end
+  end
+
   def self.upcoming_acts
     Airrecord
-      .table(
-        ENV['airtable_key'],
-        'app47yxhBJJGy9O2V',
-        'Eyegum wednesday content',
-      )
+      .table(ENV['airtable_key'], @table_id, 'Eyegum wednesday content')
       .all
       .map(&:fields)
   end
 
   def self.latest_news
     Airrecord
-      .table(ENV['airtable_key'], 'app47yxhBJJGy9O2V', 'Eyegum news items')
+      .table(ENV['airtable_key'], @table_id, 'Eyegum news items')
       .all
       .map do |item|
         [item.fields['news item'], item.fields['copy'], image(item, 'photo')]
@@ -30,11 +49,7 @@ module Airtable
 
   def self.homepage_blurb
     Airrecord
-      .table(
-        ENV['airtable_key'],
-        'app47yxhBJJGy9O2V',
-        'Eyegum website home page content',
-      )
+      .table(ENV['airtable_key'], @table_id, 'Eyegum website home page content')
       .all
       .first
       .fields[
@@ -44,7 +59,7 @@ module Airtable
 
   def self.artists
     Airrecord
-      .table(ENV['airtable_key'], 'app47yxhBJJGy9O2V', 'Bands Live')
+      .table(ENV['airtable_key'], @table_id, 'Bands Live')
       .all
       .map do |artist|
         {
@@ -80,6 +95,14 @@ module Airtable
             end,
         }
       end
+  end
+
+  def self.wtn_gallery
+    Airrecord.table(
+      ENV['airtable_key'],
+      @table_id,
+      'Welcome to Nowhere Gallery',
+    )
   end
 
   private
