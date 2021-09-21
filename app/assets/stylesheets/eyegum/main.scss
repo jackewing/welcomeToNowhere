@@ -12,6 +12,10 @@
 }
 
 .eyegum {
+  &.frontpage {
+    display: grid;
+    min-height: calc(100vh - 85px);
+  }
   &::after {
     position: absolute;
     width: 0;
@@ -38,15 +42,17 @@
       font-family: "Reckless Neue Light";
       max-width: 690px;
       font-weight: 300;
-      font-size: 40px;
+      font-size: 53px;
       line-height: 63.6px;
       letter-spacing: -0.03em;
       margin: 0;
+      height: 300px;
       @media screen and (max-width: $breakpoint) {
         margin-top: 10px;
         font-size: 33px;
         line-height: 43.6px;
         letter-spacing: -0.03em;
+        height: auto;
       }
     }
     .hand {
@@ -55,7 +61,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       max-width: 500px;
-      height: 300px;
+      height: 340px;
       width: 100%;
       &.alt {
         background-image: asset_url("homepg_illustration_2");
@@ -65,8 +71,8 @@
         height: 228px;
         background-position: center;
         margin: auto;
-        margin-bottom: 60px;
-        margin-top: 70px;
+        margin-bottom: 30px;
+        margin-top: 30px;
       }
     }
     * {
@@ -81,6 +87,9 @@
       grid-template-columns: 1fr;
     }
     .news-item {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
       .top {
         border-bottom: 2px solid $black;
         padding: 15px 30px;
@@ -102,7 +111,8 @@
         padding: 30px;
         display: flex;
         justify-content: flex-start;
-        min-height: 220px;
+        min-height: 250px;
+        height: 100%;
         @media screen and (max-width: $breakpoint) {
           padding: 15px;
         }
@@ -110,7 +120,6 @@
           border-top-left-radius: 1000px;
           border-top-right-radius: 1000px;
           width: 168px;
-          height: 228px;
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;

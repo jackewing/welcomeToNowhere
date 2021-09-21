@@ -4,6 +4,8 @@ nav {
   border-bottom: 2px solid $black;
   display: flex;
   padding: 0 30px;
+  position: relative;
+  overflow: hidden;
   @media screen and (max-width: $breakpoint) {
     position: relative;
     display: grid;

@@ -18,10 +18,25 @@
       padding-top: 57px;
     }
     .sawmill-bladee {
-      background-image: asset_ur("sawmill-bladee.svg");
+      background-image: asset_url("sawmill-bladee.svg");
+      width: 19vw;
+      height: 300px;
+      position: absolute;
+      background-repeat: no-repeat;
+      top: 300px;
+      right: 63.5vw;
+      z-index: -1;
+      background-size: contain;
     }
     .star {
-      background-image: asset_ur("star.svg");
+      background-image: asset_url("star.svg");
+      width: 19vw;
+      height: 150px;
+      background-size: contain;
+      position: absolute;
+      background-repeat: no-repeat;
+      top: 380px;
+      left: 74vw;
     }
     h1 {
       font-family: "Reckless Neue Light";
@@ -56,7 +71,6 @@
       left: 14.5vw;
       border-top-left-radius: 1000000px;
       border-top-right-radius: 1000000px;
-      box-shadow: 0px 0px 0px 1500px $white;
       position: absolute;
       z-index: -1;
       background: transparent;
