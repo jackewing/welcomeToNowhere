@@ -298,10 +298,13 @@
       @media screen and (min-width: $breakpoint) {
         grid-template-columns: repeat(5, 1fr);
       }
-      div {
+      a {
+        display: block;
         min-height: 200px;
         position: relative;
-        background-size: contain;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
         p {
           font-family: Surt Light;
           font-style: normal;

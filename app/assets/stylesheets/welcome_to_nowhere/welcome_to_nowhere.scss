@@ -38,6 +38,27 @@
       top: 380px;
       left: 74vw;
     }
+    p {
+      font-family: Surt Light;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 26px;
+      line-height: 31px;
+      letter-spacing: -0.01em;
+      color: $black;
+      max-width: 230px;
+      @media screen and (max-width: $breakpoint) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+      &.right {
+        text-align: right;
+        padding: 0;
+        margin: 0;
+        margin-top: 90px;
+        margin-left: auto;
+      }
+    }
     h1 {
       font-family: "Reckless Neue Light";
       max-width: 690px;
@@ -46,6 +67,7 @@
       line-height: 63.6px;
       letter-spacing: -0.03em;
       margin: 0;
+      color: $black;
       @media screen and (max-width: $breakpoint) {
         margin-top: 10px;
         font-size: 33px;
@@ -53,17 +75,7 @@
         letter-spacing: -0.03em;
       }
     }
-    h2 {
-      font-family: "Reckless Neue Light";
-      max-width: 690px;
-      font-weight: 300;
-      font-size: 40px;
-      line-height: 63.6px;
-      letter-spacing: -0.03em;
-      margin: auto;
-      color: $black;
-      text-align: center;
-    }
+
     .arch {
       overflow: hidden;
       height: 35vw;
@@ -80,32 +92,114 @@
         left: -10%;
       }
     }
-    #background {
-      width: 80%;
-      position: fixed;
-      margin: 0 auto;
-      transform: translateX(5%);
-      top: 0;
-      z-index: -2;
-      top: 150px;
+  }
+  .main {
+    padding-left: 30px;
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: $breakpoint) {
+      grid-template-columns: 1fr;
+      padding: 15px;
+      padding-top: 57px;
     }
-    .heading {
-      display: none;
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      z-index: 101;
-      pointer-events: none;
-      h1 {
-        font-family: "Reckless Neue Light";
-        max-width: 690px;
+    .left {
+      max-width: 575px;
+      @media screen and (max-width: $breakpoint) {
+        padding: 0px;
+        max-width: none;
+      }
+      .img-sm-container {
+        position: relative;
+        .image {
+          border-top-left-radius: 10000px;
+          border-top-right-radius: 10000px;
+          max-width: 250px;
+          height: 350px;
+          margin: auto;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          background-position: center;
+          background-size: contain;
+        }
+        @media screen and (max-width: $breakpoint) {
+          display: block;
+        }
+        display: none;
+      }
+      p {
+        font-family: Surt Light;
+        font-style: normal;
         font-weight: 300;
-        font-size: 40px;
-        line-height: 63.6px;
-        letter-spacing: -0.03em;
-        margin: auto;
+        font-size: 26px;
+        line-height: 31px;
+        letter-spacing: -0.01em;
+        @media screen and (max-width: $breakpoint) {
+          font-size: 18px;
+          line-height: 22px;
+        }
+      }
+      a {
+        font-family: Surt Light;
+        text-decoration: none;
+        border-top: 2px solid $black;
+        border-bottom: 2px solid $black;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 26px;
+        line-height: 33px;
+        padding: 15px;
+        padding-left: 0px;
+        display: flex;
         color: $black;
-        text-align: center;
+        &:hover {
+          padding-left: 30px;
+        }
+        @media screen and (max-width: $breakpoint) {
+          font-size: 18px;
+          line-height: 33px;
+          padding: 9px;
+          padding-left: 0px;
+          &:hover {
+            padding-left: 15px;
+          }
+        }
+        .arrow {
+          content: "";
+          display: block;
+          background-image: asset_url("arrow-big.svg");
+          background-size: contain;
+          cursor: pointer;
+          width: 60px;
+          height: 33px;
+          margin-bottom: 0;
+          background-repeat: no-repeat;
+          border: none;
+          background-color: transparent;
+          margin-left: 10px;
+          @media screen and (max-width: $breakpoint) {
+            background-image: asset_url("arrow-small.svg");
+            background-position: center;
+            width: 33px;
+            height: 33px;
+          }
+        }
+      }
+    }
+    .right {
+      padding-left: 30px;
+      padding-right: 30px;
+      .image {
+        max-width: 426px;
+        height: 600px;
+        margin-left: auto;
+        margin-top: 30px;
+        background-image: url("W2N_2022_poster_site.jpeg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      @media screen and (max-width: $breakpoint) {
+        display: none;
       }
     }
   }
