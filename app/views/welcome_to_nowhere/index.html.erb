@@ -1,31 +1,85 @@
-<div id="cover"></div>
 <div class="wtn">
-  <div class="splash">
-    <div class="heading">
-      <h1 class="">WELCOME TO NOWHERE</h1>
-    </div>
-    <div class="arch"></div>
-    <canvas height="1080" width="1920" id="background"></canvas>
-  </div>
-  <h2>ARTISTS</h2>
-  <div class="container">
-    <% @artists.each.with_index do |artist, index| %>
-      <a href="/welcometonowhere/artists/<%= index %>">
-        <div class="card" style="background-color: <%= @colours[index % 9] %>">
-          <div class="img-container" style="background-image: url(<%= artist[:image_url] %>)"></div>
-          <div class="text-container">
-            <h3>
-              <%= artist[:name] %>
-            </h3>
-            <p>
-              <%= artist[:city] %>
-            </p>
-            <p>
-              <%= artist[:genre] %>
-            </p>
-          </div>
+    <div class="splash">
+        <div class="arch">
+            <div id="myvideo"></div>
+            <script async src="https://www.youtube.com/iframe_api"></script>
+            <script type='text/javascript'>
+                var player;
+                var videoId = 'ZObnSXiV2_g';
+                var startSeconds = 7;  // set your own video start time when loop play
+                var endSeconds = 25;   // set your own video end time when loop play
+                var playerConfig = {
+                    height: '120%',
+                    width: '120%',
+                    videoId: videoId,
+                    playerVars: {
+
+                        autoplay: 1,            // Auto-play the video on load
+                        controls: 0,            // Show pause/play buttons in player
+                        showinfo: 0,            // Hide the video title
+                        modestbranding: 1,      // Hide the Youtube Logo
+                        fs: 1,                  // Hide the full screen button
+                        cc_load_policy: 0,      // Hide closed captions
+                        iv_load_policy: 3,      // Hide the Video Annotations
+                        start: startSeconds,
+                        end: endSeconds,
+                        autohide: 0, // Hide video controls when playing
+                    },
+                    events: {
+                        'onStateChange': onStateChange,       // reference to Iframe API
+                        onReady: function (e) {              // mute the video when loaded
+                            e.target.mute();
+                        }
+                    }
+                };
+                //excute the video in div
+                function onYouTubePlayerAPIReady() {
+
+                    player = new YT.Player('myvideo', playerConfig);
+
+                }
+                //repload the video when onStateChange=YT.PlayerState.ENDED)
+                function onStateChange(state) {
+                    if (state.data === YT.PlayerState.ENDED) {
+                        player.loadVideoById({
+                            videoId: videoId,
+                            startSeconds: startSeconds,
+                            endSeconds: endSeconds
+
+                        });
+                    }
+                }
+
+            </script>
         </div>
-      </a>
-      <% end %>
-  </div>
+    </div>
+    <!-- <iframe id="iframe-container" src="https://events.humanitix.com/welcome-to-nowhere-2022/tickets?w=true&p=%236621c0"
+        width="100%" height="600px" frameborder="0"></iframe>
+    <script>
+        var humanitix = {
+            findPos: function (obj) {
+                var curtop = 0;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while ((obj = obj.offsetParent));
+                    return [curtop];
+                }
+            }
+        };
+        window.addEventListener('message', function (e) {
+            if (e.origin !== "https://events.humanitix.com") {
+                return;
+            }
+            var messageData = e.data;
+            var iframeEl = document.getElementById('iframe-container');
+            if (iframeEl && messageData && !isNaN(messageData.scrollHeight)) {
+                iframeEl.style.height = messageData.scrollHeight + 'px';
+            }
+            if (iframeEl && messageData && messageData.pageChange) {
+                window.scroll(0, humanitix.findPos(iframeEl));
+            }
+
+        }, false);
+    </script> -->
 </div>

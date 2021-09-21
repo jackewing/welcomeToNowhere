@@ -14,6 +14,6 @@
   <body style="background-color: <%= @background_colour %>;">
     <%= render partial: '/shared/nav' %>
     <%= yield %>
-    <%= render partial: '/shared/footer' %>
+    <%= render partial: '/shared/footer', locals: { instagram_link: 'https://www.instagram.com/welcometonowhere_/' } %>
   </body>
 </html>
