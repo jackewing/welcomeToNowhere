@@ -231,13 +231,48 @@
     @media screen and (max-width: $breakpoint) {
       padding: 15px;
     }
+    .toggle-accordions {
+      margin-top: -55px;
+      cursor: pointer;
+      margin-right: 45px;
+      position: relative;
+      @media screen and (max-width: $breakpoint) {
+        text-align: right;
+        margin-bottom: 20px;
+        margin-top: -50px;
+      }
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        right: -30px;
+        top: 17px;
+        border-bottom: 2px solid #161616;
+        width: 10px;
+        display: block;
+        @media screen and (max-width: $breakpoint) {
+          top: 10px;
+        }
+      }
+      &:after {
+        transform: rotate(90deg);
+      }
+      &.open {
+        &:after {
+          display: none;
+        }
+        border-bottom: none;
+      }
+    }
     .top {
+      background: #fbe375;
+      padding-left: 15px;
       cursor: pointer;
       border-bottom: 2px solid $black;
+      padding-right: 45px;
       @media screen and (min-width: $breakpoint) {
         display: flex;
         justify-content: flex-end;
-        padding-right: 45px;
         p {
           padding: 10px;
           margin: 0;
@@ -245,6 +280,8 @@
       }
       @media screen and (max-width: $breakpoint) {
         padding: 15px 0;
+        padding-right: 45px;
+        padding-left: 15px;
       }
       position: relative;
       &:after,
@@ -252,7 +289,7 @@
         content: "";
         position: absolute;
         right: 15px;
-        bottom: 30px;
+        top: 30px;
         border-bottom: 2px solid $black;
         width: 10px;
         display: block;
@@ -270,12 +307,10 @@
         border-bottom: none;
       }
       .large {
-        display: block;
-        @media screen and (min-width: $breakpoint) {
-          display: none;
-        }
+        display: none;
       }
       .date {
+        padding-right: 30px;
         @media screen and (min-width: $breakpoint) {
           margin-right: auto;
           padding-left: 0;
@@ -297,14 +332,14 @@
       .about {
         padding-top: 15px;
         @media screen and (min-width: $breakpoint) {
-          float: left;
           padding-top: 0px;
         }
       }
       .large {
-        display: none;
+        padding-left: 15px;
         @media screen and (min-width: $breakpoint) {
           display: block;
+          max-width: 900px;
         }
       }
       &.open {
@@ -393,7 +428,7 @@
         line-height: 33px;
       }
     }
-    .gallery-container {
+    .gallery-w2n-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 15px;
@@ -405,7 +440,7 @@
         display: block;
         min-height: 200px;
         position: relative;
-        background-size: 100%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         p {

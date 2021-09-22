@@ -41,5 +41,17 @@ document.addEventListener("turbolinks:load", () => {
         element.classList.toggle("open");
       });
     });
+    document
+      .querySelector(".toggle-accordions")
+      .addEventListener("click", function (e) {
+        e.target.nextElementSibling.classList.toggle("open");
+        e.target.classList.toggle("open");
+
+        document
+          .querySelectorAll(".faqs .question > div")
+          .forEach((element) => {
+            element.classList.toggle("open");
+          });
+      });
   }
 });

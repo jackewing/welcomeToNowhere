@@ -15,6 +15,7 @@
   &.frontpage {
     display: grid;
     min-height: calc(100vh - 85px);
+    grid-template-rows: 1fr;
   }
   &::after {
     position: absolute;
@@ -111,7 +112,7 @@
         padding: 30px;
         display: flex;
         justify-content: flex-start;
-        min-height: 250px;
+        min-height: 300px;
         height: 100%;
         @media screen and (max-width: $breakpoint) {
           padding: 15px;

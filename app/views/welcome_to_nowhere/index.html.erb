@@ -36,8 +36,22 @@
   <div class="lineup">
     <p>Lineup: Coming Soon</p>
   </div>
+  <div class="gallery">
+    <h3>Gallery</h3>
+    <div class="gallery-w2n-container">
+      <% @gallery.each do |image| %>
+        <a href="<%= image[:image_url] %>" style="background-image: url(<%= image[:image_url] %>)">
+          <p>
+            <%= image[:name] %>
+              <%= image[:tags] %>
+          </p>
+        </a>
+        <% end %>
+    </div>
+  </div>
   <div class="faqs">
     <h3>FAQs</h3>
+    <p class="toggle-accordions">Open/Close all</p>
     <% @faqs.each do |question| %>
       <div class="question">
         <div class="top">
@@ -59,23 +73,10 @@
       </div>
       <% end %>
   </div>
-  <div class="gallery">
-    <h3>Gallery</h3>
-    <div class="gallery-container">
-      <% @gallery.each do |image| %>
-        <a href="<%= image[:image_url] %>" style="background-image: url(<%= image[:image_url] %>)">
-          <p>
-            <%= image[:name] %>
-              <%= image[:tags] %>
-          </p>
-        </a>
-        <% end %>
-    </div>
-  </div>
   <script type="text/javascript" src="/javascripts/lib/lightbox.js"></script>
   <script type="text/javascript">
     document.addEventListener("turbolinks:load", function () {
-      new SimpleLightbox({ elements: '.gallery-container a' });
+      new SimpleLightbox({ elements: '.gallery-w2n-container a' });
     })
   </script>
   <!-- <iframe id="iframe-container" src="https://events.humanitix.com/welcome-to-nowhere-2022/tickets?w=true&p=%236621c0"
