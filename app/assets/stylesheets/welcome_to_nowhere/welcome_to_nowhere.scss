@@ -304,7 +304,6 @@
         &:after {
           display: none;
         }
-        border-bottom: none;
       }
       .large {
         display: none;
@@ -321,6 +320,7 @@
       padding-top: 0px;
       overflow: hidden;
       max-height: 0;
+      transition: max-height 0.3s ease-in-out;
       p {
         padding-bottom: 15px;
         @media screen and (min-width: $breakpoint) {
@@ -343,8 +343,7 @@
         }
       }
       &.open {
-        max-height: none;
-        border-bottom: 2px solid $black;
+        max-height: 220px;
       }
       img {
         margin: 0 auto 15px;

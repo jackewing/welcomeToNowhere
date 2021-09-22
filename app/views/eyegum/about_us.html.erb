@@ -33,3 +33,14 @@
     </div>
   </div>
 </div>
+<script>
+  if (document.getElementsByClassName("hand").length) {
+    if (interval) {
+      clearInterval(interval);
+    }
+
+    var interval = setInterval(() => {
+      document.getElementsByClassName("hand")[0].classList.toggle("alt");
+    }, 3000);
+  }
+</script>

@@ -13,16 +13,6 @@ Turbolinks.start();
 ActiveStorage.start();
 
 document.addEventListener("turbolinks:load", () => {
-  if (document.getElementsByClassName("hand").length) {
-    if (interval) {
-      clearInterval(interval);
-    }
-
-    var interval = setInterval(() => {
-      document.getElementsByClassName("hand")[0].classList.toggle("alt");
-    }, 3000);
-  }
-
   if (document.getElementsByClassName("wednesdays").length) {
     document
       .querySelectorAll(".wednesdays .coming-up .top")

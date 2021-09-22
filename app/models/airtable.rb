@@ -3,11 +3,11 @@ class Airtable
 
   def self.fetch(resource)
     # caches if in development
-    return ENV['RACK_ENV'] == 'development' && self.send(resource)
+    # return ENV['RACK_ENV'] == 'development' && self.send(resource)
 
-    # Rails
-    #   .cache
-    #   .fetch([self, resource], expires_in: 10.minutes) { self.send(resource) }
+    Rails
+      .cache
+      .fetch([self, resource], expires_in: 10.minutes) { self.send(resource) }
   end
 
   def self.faqs
