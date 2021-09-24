@@ -9,4 +9,17 @@
       <%= news_item[1].present? && news_item[1].html_safe %>
     </p>
   </div>
+  <script>
+    if (document.getElementsByClassName("hand").length) {
+      if (interval) {
+        clearInterval(interval);
+      }
+
+      var interval = setInterval(() => {
+        if(document.getElementsByClassName("hand").length) {
+          document.getElementsByClassName("hand")[0].classList.toggle("alt");
+        }
+      }, 3000);
+    }
+  </script>
 </div>
