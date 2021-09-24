@@ -12,11 +12,11 @@
     grid-template-columns: 2fr 1fr;
 
     @media screen and (max-width: $breakpoint) {
-      height: calc(100vh - 57px);
+      height: calc(100vh);
       border-bottom: none;
-      grid-template-columns: 1fr;
       padding: 15px;
       padding-top: 57px;
+      grid-template-columns: 1fr 1fr;
     }
     .sawmill-bladee {
       background-image: asset_url("sun.png");
@@ -24,10 +24,13 @@
       height: 300px;
       position: absolute;
       background-repeat: no-repeat;
-      top: 300px;
-      left: 5vw;
+      top: 20vh;
+      left: 15vw;
       z-index: -1;
       background-size: contain;
+      @media screen and (max-width: $breakpoint) {
+        display: none;
+      }
     }
     .star {
       background-image: asset_url("flower.png");
@@ -38,24 +41,37 @@
       background-repeat: no-repeat;
       bottom: 30px;
       right: 0px;
+      @media screen and (max-width: $breakpoint) {
+        display: none;
+      }
     }
 
     .arch {
       overflow: hidden;
       height: calc(0.5 * 96vw);
-      max-height: calc(100vh - 130px);
-      width: calc(100vw - 60px);
-      left: 30px;
+      max-height: calc(90vw / 2);
+      width: calc(90vw - 60px);
+      left: calc(30px + 5vw);
       border-top-left-radius: 1000000px;
       border-top-right-radius: 1000000px;
       position: absolute;
       z-index: -1;
       background: transparent;
       bottom: 30px;
-
+      @media screen and (max-width: $breakpoint) {
+        height: 73vh;
+        width: calc(100vw - 30px);
+        left: 15px;
+        max-height: none;
+        bottom: 15px;
+      }
       iframe {
         position: absolute;
         left: -10%;
+        @media screen and (max-width: $breakpoint) {
+          left: -100%;
+          width: 300%;
+        }
       }
     }
     p {
@@ -68,8 +84,9 @@
       color: $black;
       max-width: 230px;
       @media screen and (max-width: $breakpoint) {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 22px;
+        margin-top: 5px;
       }
       &.right {
         text-align: right;
@@ -77,6 +94,9 @@
         margin: 0;
         margin-top: 90px;
         margin-left: auto;
+        @media screen and (max-width: $breakpoint) {
+          margin-top: 58px;
+        }
       }
     }
     h1 {
@@ -93,6 +113,7 @@
         font-size: 33px;
         line-height: 43.6px;
         letter-spacing: -0.03em;
+        width: 200%;
       }
     }
   }
@@ -103,13 +124,24 @@
     @media screen and (max-width: $breakpoint) {
       grid-template-columns: 1fr;
       padding: 15px;
-      padding-top: 57px;
     }
+
     .left {
       max-width: 575px;
       @media screen and (max-width: $breakpoint) {
         padding: 0px;
         max-width: none;
+      }
+
+      .large {
+        @media screen and (max-width: $breakpoint) {
+          display: none;
+        }
+      }
+      .small {
+        @media screen and (min-width: $breakpoint) {
+          display: none;
+        }
       }
       .img-sm-container {
         position: relative;
@@ -125,7 +157,7 @@
           background-size: contain;
         }
         @media screen and (max-width: $breakpoint) {
-          display: block;
+          display: none;
         }
         display: none;
       }
@@ -195,14 +227,22 @@
         max-width: 575px;
         height: 792px;
         margin-left: auto;
-        background-position: right;
+        background-position: top right;
         margin-top: 30px;
         background-image: asset_url("W2N_2022_poster_site.jpeg");
         background-size: contain;
         background-repeat: no-repeat;
       }
       @media screen and (max-width: $breakpoint) {
-        display: none;
+        padding: 0;
+        .image {
+          background-position: top center;
+          margin: 0 auto;
+          width: 100%;
+          height: auto;
+          margin-top: 30px;
+          min-height: 550px;
+        }
       }
     }
   }
@@ -214,7 +254,19 @@
     @media screen and (max-width: $breakpoint) {
       grid-template-columns: 1fr;
       padding: 15px;
-      padding-top: 57px;
+    }
+    h3 {
+      font-family: Surt Light;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 33px;
+      letter-spacing: -0.01em;
+      text-align: left;
+      @media screen and (max-width: $breakpoint) {
+        font-size: 22px;
+        line-height: 33px;
+      }
     }
     p {
       font-family: Surt Light;
@@ -346,7 +398,10 @@
         }
       }
       &.open {
-        max-height: 220px;
+        max-height: 300px;
+        @media screen and (max-width: $breakpoint) {
+          max-height: 630px;
+        }
       }
       img {
         margin: 0 auto 15px;
@@ -370,7 +425,6 @@
       letter-spacing: -0.01em;
       text-align: left;
       @media screen and (max-width: $breakpoint) {
-        margin-top: 55px;
         font-size: 22px;
         line-height: 33px;
       }
@@ -425,7 +479,6 @@
       letter-spacing: -0.01em;
       text-align: left;
       @media screen and (max-width: $breakpoint) {
-        margin-top: 55px;
         font-size: 22px;
         line-height: 33px;
       }
@@ -447,6 +500,9 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        @media screen and (max-width: $breakpoint) {
+          min-height: auto;
+        }
         p {
           font-family: Surt Light;
           font-style: normal;
