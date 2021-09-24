@@ -67,3 +67,15 @@
     new SimpleLightbox({elements: '.gallery-container a'});
   })
 </script>
+<script>
+  if (document.getElementsByClassName("wednesdays").length) {
+    document
+      .querySelectorAll(".wednesdays .coming-up .top")
+      .forEach((element) => {
+        element.addEventListener("click", function (e) {
+          element.nextElementSibling.classList.toggle("open");
+          element.classList.toggle("open");
+        });
+      });
+  }
+</script>

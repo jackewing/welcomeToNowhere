@@ -74,13 +74,21 @@
         <% end %>
     </div>
   </div>
-  <script async type="text/javascript" src="/javascripts/lib/lightbox.js"></script>
+  <script type="text/javascript" src="/javascripts/lib/lightbox.js"></script>
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
       new SimpleLightbox({ elements: '.gallery-w2n-container a' });
     })
   </script>
-  <script async src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    var scriptUrl = 'https:\/\/www.youtube.com\/s\/player\/54d85b95\/www-widgetapi.vflset\/www-widgetapi.js'; try { var ttPolicy = window.trustedTypes.createPolicy("youtube-widget-api", { createScriptURL: function (x) { return x } }); scriptUrl = ttPolicy.createScriptURL(scriptUrl) } catch (e) { } if (!window["YT"]) var YT = { loading: 0, loaded: 0 }; if (!window["YTConfig"]) var YTConfig = { "host": "https://www.youtube.com" };
+    if (!YT.loading) {
+      YT.loading = 1; (function () {
+        var l = []; YT.ready = function (f) { if (YT.loaded) f(); else l.push(f) }; window.onYTReady = function () { YT.loaded = 1; for (var i = 0; i < l.length; i++)try { l[i]() } catch (e$0) { } }; YT.setConfig = function (c) { for (var k in c) if (c.hasOwnProperty(k)) YTConfig[k] = c[k] }; var a = document.createElement("script"); a.type = "text/javascript"; a.id = "www-widgetapi-script"; a.src = scriptUrl; a.async = true; var c = document.currentScript; if (c) { var n = c.nonce || c.getAttribute("nonce"); if (n) a.setAttribute("nonce", n) } var b =
+          document.getElementsByTagName("script")[0]; b.parentNode.insertBefore(a, b)
+      })()
+    };
+  </script>
   <script type='text/javascript'>
     var player;
     var videoId = 'ZObnSXiV2_g';
@@ -115,7 +123,6 @@
     //excute the video in div
     function onYouTubePlayerAPIReady() {
       player = new YT.Player('wtn-video', playerConfig);
-
     }
     //repload the video when onStateChange=YT.PlayerState.ENDED)
     function onStateChange(state) {
@@ -128,6 +135,27 @@
         });
       }
     }
+  </script>
+  <script>
+    if (document.getElementsByClassName("faqs").length) {
+      document.querySelectorAll(".wtn .faqs .top").forEach((element) => {
+        element.addEventListener("click", function (e) {
+          element.nextElementSibling.classList.toggle("open");
+          element.classList.toggle("open");
+        });
+      });
+      document
+        .querySelector(".toggle-accordions")
+        .addEventListener("click", function (e) {
+          e.target.nextElementSibling.classList.toggle("open");
+          e.target.classList.toggle("open");
 
+          document
+            .querySelectorAll(".faqs .question > div")
+            .forEach((element) => {
+              element.classList.toggle("open");
+            });
+        });
+    }
   </script>
 </div>
