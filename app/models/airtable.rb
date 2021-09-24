@@ -13,7 +13,7 @@ class Airtable
   def self.faqs
     Airrecord
       .table(ENV['airtable_key'], @table_id, "W2N FAQ's")
-      .all
+      .all(sort: { 'Order' => 'asc' })
       .map(&:fields)
   end
 

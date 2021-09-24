@@ -11,6 +11,11 @@
   background-repeat: repeat-y;
 }
 
+.slbCaption {
+  font-family: "Surt Light";
+  font-size: 21px;
+}
+
 .eyegum {
   &.frontpage {
     display: grid;
@@ -101,7 +106,7 @@
         }
         h2 {
           width: 100%;
-          font-size: 23px;
+          font-size: 18px;
           font-family: "Surt Light";
           margin: 0;
           text-transform: uppercase;
@@ -127,6 +132,8 @@
         }
         a {
           color: $black;
+          margin-top: 1.5rem;
+          display: inline-block;
         }
         p {
           margin: 0;
@@ -140,7 +147,7 @@
           line-height: 25px;
           letter-spacing: -0.01em;
           text-align: left;
-
+          max-width: 400px;
           @media screen and (max-width: $breakpoint) {
             font-size: 18px;
             line-height: 22px;

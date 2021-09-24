@@ -6,37 +6,57 @@
 
 .wtn {
   .splash {
-    min-height: 100vh;
+    height: calc(100vh - 85px);
     padding: 30px;
     display: grid;
     grid-template-columns: 2fr 1fr;
 
     @media screen and (max-width: $breakpoint) {
+      height: calc(100vh - 57px);
       border-bottom: none;
       grid-template-columns: 1fr;
       padding: 15px;
       padding-top: 57px;
     }
     .sawmill-bladee {
-      background-image: asset_url("sawmill-bladee.svg");
+      background-image: asset_url("sun.png");
       width: 19vw;
       height: 300px;
       position: absolute;
       background-repeat: no-repeat;
       top: 300px;
-      right: 63.5vw;
+      left: 5vw;
       z-index: -1;
       background-size: contain;
     }
     .star {
-      background-image: asset_url("star.svg");
-      width: 19vw;
-      height: 150px;
+      background-image: asset_url("flower.png");
+      width: 230px;
+      height: 300px;
       background-size: contain;
       position: absolute;
       background-repeat: no-repeat;
-      top: 380px;
-      left: 74vw;
+      bottom: 30px;
+      right: 0px;
+    }
+
+    .arch {
+      overflow: hidden;
+      height: calc(0.5 * 96vw);
+      max-height: calc(100vh - 130px);
+      width: calc(100vw - 60px);
+      left: 30px;
+      border-top-left-radius: 1000000px;
+      border-top-right-radius: 1000000px;
+      position: absolute;
+      z-index: -1;
+      background: transparent;
+      bottom: 30px;
+
+      iframe {
+        position: absolute;
+        left: -10%;
+      }
     }
     p {
       font-family: Surt Light;
@@ -75,27 +95,9 @@
         letter-spacing: -0.03em;
       }
     }
-
-    .arch {
-      overflow: hidden;
-      height: 35vw;
-      width: 70vw;
-      left: 14.5vw;
-      border-top-left-radius: 1000000px;
-      border-top-right-radius: 1000000px;
-      position: absolute;
-      z-index: -1;
-      background: transparent;
-      top: 200px;
-      iframe {
-        position: absolute;
-        left: -10%;
-      }
-    }
   }
   .main {
     padding-left: 30px;
-    padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     @media screen and (max-width: $breakpoint) {
@@ -190,9 +192,10 @@
       padding-left: 30px;
       padding-right: 30px;
       .image {
-        max-width: 426px;
-        height: 600px;
+        max-width: 575px;
+        height: 792px;
         margin-left: auto;
+        background-position: right;
         margin-top: 30px;
         background-image: asset_url("W2N_2022_poster_site.jpeg");
         background-size: contain;
@@ -432,10 +435,12 @@
       grid-template-columns: 1fr 1fr;
       column-gap: 15px;
       row-gap: 15px;
+
       @media screen and (min-width: $breakpoint) {
         grid-template-columns: repeat(5, 1fr);
       }
       a {
+        aspect-ratio: 1;
         display: block;
         min-height: 200px;
         position: relative;

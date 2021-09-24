@@ -55,8 +55,7 @@
     <h3>Gallery</h3>
     <div class="gallery-container">
       <% @gallery.each do |image| %>
-        <a href="<%= image[:image_url] %>" style="background-image: url(<%= image[:image_url] %>)">
-          <p><%= image[:name] %></p>
+        <a href="<%= image[:image_url] %>" title="<%= image[:name] %>" style="background-image: url(<%= image[:image_url] %>)">
         </a>
       <% end %>
     </div>
@@ -64,7 +63,7 @@
 </div>
 <script type="text/javascript" src="/javascripts/lib/lightbox.js"></script>
 <script type="text/javascript">
-  document.addEventListener("turbolinks:load", function() {
+  document.addEventListener("DOMContentLoaded", function() {
     new SimpleLightbox({elements: '.gallery-container a'});
   })
 </script>
