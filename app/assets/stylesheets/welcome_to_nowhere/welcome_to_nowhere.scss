@@ -59,7 +59,7 @@
       background: transparent;
       bottom: 30px;
       @media screen and (max-width: $breakpoint) {
-        height: 67vh;
+        height: 63vh;
         width: calc(100vw - 30px);
         left: 15px;
         max-height: none;
@@ -241,7 +241,7 @@
           width: 100%;
           height: auto;
           margin-top: 30px;
-          min-height: 550px;
+          min-height: 400px;
         }
       }
     }
