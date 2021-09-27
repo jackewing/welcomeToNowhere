@@ -33,6 +33,7 @@ class Airtable
     Airrecord
       .table(ENV['airtable_key'], @table_id, 'Wednesday Gallery')
       .all
+      .filter { |record| record.fields.present? }
       .map do |image|
         { name: image['Name'], image_url: image(image, 'Attachments') }
       end
@@ -108,6 +109,7 @@ class Airtable
     Airrecord
       .table(ENV['airtable_key'], @table_id, 'Welcome to Nowhere Gallery')
       .all
+      .filter { |record| record.fields.present? }
       .map do |image|
         {
           name: image['Name'],
