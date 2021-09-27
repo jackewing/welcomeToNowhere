@@ -40,7 +40,7 @@
               <%= act['Address'] %>
             </p>
             <p>
-              <%= act['Insert short caption about event'].present? act['Insert short caption about event'].html_safe && %>
+              <%= act['Insert short caption about event'].present? && act['Insert short caption about event'].html_safe %>
             </p>
           </div>
           <% if Airtable.image(act, 'Poster' ) %>
