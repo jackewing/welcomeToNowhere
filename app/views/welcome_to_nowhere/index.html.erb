@@ -57,7 +57,7 @@
         <div class="bottom">
           <div class="about">
             <p class="large">
-              <%= question['Answer'].html_safe %>
+              <%= question['Answer'].present? && question['Answer'].html_safe %>
             </p>
           </div>
         </div>
