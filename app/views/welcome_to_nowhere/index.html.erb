@@ -69,11 +69,21 @@
     <div class="gallery-w2n-container">
       <% @gallery.each do |image| %>
         <a href="<%= image[:image_url] %>" title="<%= image[:name] %>"
-          style="background-image: url(<%= image[:image_url] %>)">
+          data-src="<%= image[:image_url] %>">
         </a>
         <% end %>
     </div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      [].forEach.call(document.querySelectorAll('.gallery a[data-src]'), function(div) {
+        div.setAttribute("style","background-image: url(" + div.getAttribute('data-src') + ");");
+        div.onload = function() {
+          div.removeAttribute('data-src');
+        };
+      });
+    })
+  </script>
   <script type="text/javascript" src="/javascripts/lib/lightbox.js"></script>
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
