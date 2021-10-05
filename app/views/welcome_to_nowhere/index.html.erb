@@ -24,8 +24,7 @@
         independent
         artists from around the country. Join us for 2.5 days of music and art, among a welcoming community.</p>
       <div class="img-sm-container">
-        <div style="background-image: url(<%= @background_image %>)" class="image" alt="Welcome to Nowhere Poster">
-        </div>
+        <img src="<%= asset_url("W2N_2022_poster_site.jpeg") %>" alt="Welcome to Nowhere Poster" />
       </div>
       <a class="large" href="https://events.humanitix.com/welcome-to-nowhere-2022/tickets?w=true&p=%236621c0">
         Buy Tickets and Merch
@@ -33,12 +32,21 @@
       </a>
     </div>
     <div class="right">
-      <div class="image" alt="Eyegum Wednesdays at San Fran">
-      </div>
+      <img src="<%= asset_url("W2N_2022_poster_site.jpeg") %>" alt="Welcome to Nowhere Poster" />
     </div>
   </div>
   <div class="lineup">
-    <h3>Lineup: Coming Soon</h3>
+    <h3>Lineup</h3>
+    <div class="w2n-container">
+      <% @artists.each.with_index do |artist, index| %>
+      <a href="/welcometonowhere/artists/<%= index %>">
+        <div class="bg-image" style="background-image: url(<%= artist[:image_url] %>)"></div>
+        <h4><%= artist[:name] %></h4>
+        <p><%= artist[:city] %></p>
+        <p><%= artist[:genre] %></p>
+      </a>
+      <% end %>
+    </div>
   </div>
   <div class="faqs">
     <h3>FAQs</h3>
@@ -87,7 +95,7 @@
   <script type="text/javascript" src="/javascripts/lib/lightbox.js"></script>
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
-      new SimpleLightbox({ elements: '.gallery-w2n-container a' });
+      new SimpleLightbox({ elements: '.gallery .gallery-w2n-container a' });
     })
   </script>
   <script>

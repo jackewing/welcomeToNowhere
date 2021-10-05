@@ -1,4 +1,4 @@
-<div class="show flex" style="background-color: <%= @colours[@index % 9] %>">
+<div class="show-artists flex">
   <div class="img-container" style="background-image: url(<%= @artists[@index][:image_url] %>)"></div>
   <img src="<%= @artists[@index][:image_url] %>">
   <div class="text-container">
@@ -7,6 +7,6 @@
     <p><%= @artists[@index][:genre] %></p>
     <a href="<%= @artists[@index][:links] %>">Listen to <%= @artists[@index][:name] %></a>
     <p><%= @artists[@index][:long_description] %></p>
-    <a href="/welcometonowhere">Back</a>
+    <a class="back" href="/welcometonowhere">Back</a>
   </div>
 </div>

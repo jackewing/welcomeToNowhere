@@ -223,61 +223,17 @@
     .right {
       padding-left: 30px;
       padding-right: 30px;
-      .image {
+      img {
         max-width: 575px;
-        height: 792px;
-        margin-left: auto;
-        background-position: top right;
-        margin-top: 30px;
-        background-image: asset_url("W2N_2022_poster_site.jpeg");
-        background-size: contain;
-        background-repeat: no-repeat;
+        width: 100%;
       }
       @media screen and (max-width: $breakpoint) {
         padding: 0;
-        .image {
-          background-position: top center;
-          margin: 0 auto;
-          width: 100%;
-          height: auto;
-          margin-top: 30px;
-          min-height: 400px;
+      }
+      @media screen and (min-width: $breakpoint) {
+        img {
+          float: right;
         }
-      }
-    }
-  }
-  .lineup {
-    padding-left: 30px;
-    padding-top: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    @media screen and (max-width: $breakpoint) {
-      grid-template-columns: 1fr;
-      padding: 15px;
-    }
-    h3 {
-      font-family: Surt Light;
-      font-size: 26px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 33px;
-      letter-spacing: -0.01em;
-      text-align: left;
-      @media screen and (max-width: $breakpoint) {
-        font-size: 22px;
-        line-height: 33px;
-      }
-    }
-    p {
-      font-family: Surt Light;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 26px;
-      line-height: 31px;
-      letter-spacing: -0.01em;
-      @media screen and (max-width: $breakpoint) {
-        font-size: 18px;
-        line-height: 22px;
       }
     }
   }
@@ -398,7 +354,7 @@
         }
       }
       &.open {
-        max-height: 300px;
+        max-height: 360px;
         @media screen and (max-width: $breakpoint) {
           max-height: 630px;
         }
@@ -464,6 +420,87 @@
       }
     }
   }
+
+  .lineup {
+    padding: 30px;
+    padding-bottom: 30px;
+    @media screen and (max-width: $breakpoint) {
+      padding: 15px;
+    }
+    h3 {
+      font-family: Surt Light;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 33px;
+      letter-spacing: -0.01em;
+      text-align: left;
+      @media screen and (max-width: $breakpoint) {
+        font-size: 22px;
+        line-height: 33px;
+      }
+    }
+    .w2n-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: 15px;
+      row-gap: 15px;
+      @media screen and (min-width: 510px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media screen and (min-width: 750px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media screen and (min-width: 1050px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media screen and (min-width: 1300px) {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      a {
+        aspect-ratio: 1;
+        text-decoration: none;
+        border: 1px solid $black;
+        padding: 20px;
+        display: block;
+        .bg-image {
+          width: 100%;
+          height: 100%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        h4 {
+          font-family: Surt Light;
+          text-decoration: none;
+          color: $black;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 20px;
+          letter-spacing: -0.01em;
+          text-align: left;
+          margin: 5px 0;
+          margin-top: 15px;
+          @media screen and (max-width: $breakpoint) {
+          }
+        }
+
+        p {
+          font-family: Surt Light;
+          color: $black;
+          font-style: normal;
+          font-weight: 300;
+          letter-spacing: -0.01em;
+          font-size: 14px;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+
   .gallery {
     padding: 30px;
     padding-bottom: 55px;

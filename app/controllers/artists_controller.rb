@@ -10,6 +10,7 @@ class ArtistsController < ApplicationController
     @artists = artists
     @colours = colours
     @index = params[:id].to_i
+    @background_colour = Colours.white
   end
 
   private

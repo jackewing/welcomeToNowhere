@@ -68,7 +68,7 @@ class Airtable
   def self.artists
     Airrecord
       .table(ENV['airtable_key'], @table_id, 'Bands Live')
-      .all
+      .all(sort: { 'Name' => 'asc' })
       .map do |artist|
         {
           name: artist['Name'],
