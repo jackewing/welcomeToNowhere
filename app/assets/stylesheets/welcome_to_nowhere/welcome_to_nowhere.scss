@@ -60,7 +60,7 @@
       bottom: 30px;
       @media screen and (max-width: $breakpoint) {
         height: 63vh;
-        width: calc(100vw - 30px);
+        width: calc(100vw - 45px);
         left: 15px;
         max-height: none;
         bottom: 15px;
@@ -168,7 +168,9 @@
         font-size: 26px;
         line-height: 31px;
         letter-spacing: -0.01em;
+        margin-top: 0;
         @media screen and (max-width: $breakpoint) {
+          margin-top: 20px;
           font-size: 18px;
           line-height: 22px;
         }
@@ -423,7 +425,7 @@
 
   .lineup {
     padding: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
     @media screen and (max-width: $breakpoint) {
       padding: 15px;
     }
@@ -440,62 +442,53 @@
         line-height: 33px;
       }
     }
-    .w2n-container {
+    .gallery-w2n-container {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       column-gap: 15px;
       row-gap: 15px;
-      @media screen and (min-width: 510px) {
-        grid-template-columns: 1fr 1fr;
-      }
-      @media screen and (min-width: 750px) {
-        grid-template-columns: repeat(3, 1fr);
-      }
 
-      @media screen and (min-width: 1050px) {
+      @media screen and (min-width: $breakpoint) {
         grid-template-columns: repeat(4, 1fr);
       }
+
       @media screen and (min-width: 1300px) {
         grid-template-columns: repeat(5, 1fr);
       }
 
       a {
         aspect-ratio: 1;
-        text-decoration: none;
-        border: 1px solid $black;
-        padding: 20px;
         display: block;
-        .bg-image {
-          width: 100%;
-          height: 100%;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
+        min-height: 200px;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-decoration: none;
+        color: $black;
+        margin-bottom: 100px;
+        @media screen and (max-width: $breakpoint) {
+          min-height: auto;
         }
-        h4 {
-          font-family: Surt Light;
-          text-decoration: none;
-          color: $black;
-          font-size: 18px;
-          font-style: normal;
-          font-weight: 300;
-          line-height: 20px;
-          letter-spacing: -0.01em;
-          text-align: left;
-          margin: 5px 0;
-          margin-top: 15px;
-          @media screen and (max-width: $breakpoint) {
+        .text-container {
+          position: absolute;
+          bottom: -95px;
+          h4 {
+            font-family: Surt Light;
+            margin: 0;
+            padding: 10px 0;
           }
-        }
-
-        p {
-          font-family: Surt Light;
-          color: $black;
-          font-style: normal;
-          font-weight: 300;
-          letter-spacing: -0.01em;
-          font-size: 14px;
-          margin: 10px 0;
+          p {
+            font-family: Surt Light;
+            font-style: normal;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            text-align: left;
+            padding: 5px;
+            font-size: 14px;
+            margin: 0;
+            padding-left: 0;
+          }
         }
       }
     }
@@ -527,6 +520,10 @@
       row-gap: 15px;
 
       @media screen and (min-width: $breakpoint) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media screen and (min-width: 1300px) {
         grid-template-columns: repeat(5, 1fr);
       }
       a {

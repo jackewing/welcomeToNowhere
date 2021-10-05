@@ -37,15 +37,16 @@
   </div>
   <div class="lineup">
     <h3>Lineup</h3>
-    <div class="w2n-container">
+    <div class="gallery-w2n-container">
       <% @artists.each.with_index do |artist, index| %>
-      <a href="/welcometonowhere/artists/<%= index %>">
-        <div class="bg-image" style="background-image: url(<%= artist[:image_url] %>)"></div>
-        <h4><%= artist[:name] %></h4>
-        <p><%= artist[:city] %></p>
-        <p><%= artist[:genre] %></p>
-      </a>
-      <% end %>
+        <a href="/welcometonowhere/artists/<%= index %>" style="background-image: url(<%= artist[:image_url] %>)">
+        <div class="text-container">
+          <h4><%= artist[:name] %></h4>
+          <p><%= artist[:city] %></p>
+          <p><%= artist[:genre] %></p>
+        </div>
+        </a>
+        <% end %>
     </div>
   </div>
   <div class="faqs">
