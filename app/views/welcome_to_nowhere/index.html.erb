@@ -24,7 +24,8 @@
         independent
         artists from around the country. Join us for 2.5 days of music and art, among a welcoming community.</p>
       <div class="img-sm-container">
-        <%= image_tag "W2N_2022_poster_site.jpeg", alt:"Welcome to Nowhere Poster"  %>
+        <div style="background-image: url(<%= @background_image %>)" class="image" alt="Welcome to Nowhere Poster">
+        </div>
       </div>
       <a class="large" href="https://events.humanitix.com/welcome-to-nowhere-2022/tickets?w=true&p=%236621c0">
         Buy Tickets and Merch
@@ -32,7 +33,8 @@
       </a>
     </div>
     <div class="right">
-      <%= image_tag "W2N_2022_poster_site.jpeg", alt:"Welcome to Nowhere Poster"  %>
+      <div class="image" alt="Welcome to Nowhere Poster">
+      </div>
     </div>
   </div>
   <div class="lineup">

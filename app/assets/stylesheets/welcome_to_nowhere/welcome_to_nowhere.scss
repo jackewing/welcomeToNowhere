@@ -225,17 +225,22 @@
     .right {
       padding-left: 30px;
       padding-right: 30px;
-      img {
+      .image {
         max-width: 575px;
-        width: 100%;
+        height: 642px;
+        margin: auto;
+        background-position: top right;
+        background-image: asset_url("W2N_2022_poster_site.jpeg");
+        background-size: contain;
+        background-repeat: no-repeat;
       }
       @media screen and (max-width: $breakpoint) {
         padding: 0;
+        .image {
+          background-position: center;
+        }
       }
       @media screen and (min-width: $breakpoint) {
-        img {
-          float: right;
-        }
       }
     }
   }
