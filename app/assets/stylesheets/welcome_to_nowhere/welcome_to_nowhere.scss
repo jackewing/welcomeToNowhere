@@ -227,7 +227,8 @@
       padding-right: 30px;
       .image {
         max-width: 575px;
-        height: 642px;
+        width: 100%;
+        aspect-ratio: 0.7;
         margin: auto;
         background-position: top right;
         background-image: asset_url("W2N_2022_poster_site.jpeg");
@@ -252,6 +253,7 @@
     padding: 30px;
     @media screen and (max-width: $breakpoint) {
       padding: 15px;
+      padding-top: 0;
     }
     .toggle-accordions {
       margin-top: -55px;
@@ -437,6 +439,7 @@
     padding-bottom: 0px;
     @media screen and (max-width: $breakpoint) {
       padding: 15px;
+      padding-top: 0;
     }
     h3 {
       font-family: Surt Light;
@@ -446,6 +449,7 @@
       line-height: 33px;
       letter-spacing: -0.01em;
       text-align: left;
+      margin-top: 0;
       @media screen and (max-width: $breakpoint) {
         font-size: 22px;
         line-height: 33px;
@@ -466,22 +470,21 @@
       }
 
       a {
-        aspect-ratio: 1;
-        display: block;
+        display: flex;
+        flex-direction: column;
         min-height: 200px;
-        position: relative;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
         text-decoration: none;
         color: $black;
-        margin-bottom: 100px;
         @media screen and (max-width: $breakpoint) {
           min-height: auto;
         }
+        div:not(.text-container) {
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          aspect-ratio: 1;
+        }
         .text-container {
-          position: absolute;
-          bottom: -95px;
           h4 {
             font-family: Surt Light;
             margin: 0;
@@ -508,6 +511,7 @@
     padding-bottom: 55px;
     @media screen and (max-width: $breakpoint) {
       padding: 15px;
+      padding-top: 0;
     }
     h3 {
       font-family: Surt Light;
@@ -517,6 +521,7 @@
       line-height: 33px;
       letter-spacing: -0.01em;
       text-align: left;
+      margin-top: 0;
       @media screen and (max-width: $breakpoint) {
         font-size: 22px;
         line-height: 33px;
