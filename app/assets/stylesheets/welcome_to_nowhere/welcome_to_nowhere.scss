@@ -4,6 +4,54 @@
   top: 0;
 }
 
+.banner-container {
+  height: 50px;
+  position: fixed;
+  top: -80px;
+  background: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  transition: top 1s ease-in-out;
+  &.active {
+    top: 0;
+  }
+  .covid-banner {
+    position: absolute;
+    top: 2.375rem;
+    left: 0;
+    right: 0;
+    height: 1.25rem;
+    padding-left: calc(50% - 65px);
+    padding-right: calc(50% - 65px);
+    background-image: -webkit-linear-gradient(
+      315deg,
+      transparent 29%,
+      #ffcb05 0,
+      #ffcb05 72%,
+      transparent 0
+    );
+    background-image: linear-gradient(
+      135deg,
+      transparent 29%,
+      #ffcb05 0,
+      #ffcb05 72%,
+      transparent 0
+    );
+    background-origin: content-box;
+  }
+  p {
+    font-family: Surt Light;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 31px;
+    letter-spacing: -0.01em;
+    color: $black;
+    padding: 0;
+    padding-left: 15px;
+    margin: 5px;
+  }
+}
+
 .wtn {
   .splash {
     height: calc(100vh - 85px);

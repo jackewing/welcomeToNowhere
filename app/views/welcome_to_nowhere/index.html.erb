@@ -1,3 +1,47 @@
+<div class="banner-container">
+  <div class="covid-banner"></div>
+  <p>
+    On 5 October 2021 the Government announced that digital COVID-19 vaccination certificates will be available
+    in time for summer festival season. <a href="#">Read more about how this will affect Welcome to Nowhere</a>
+  </p>
+  <a href="#" id="close">Close</a>
+</div>
+
+<script>
+  function getCookie(name){
+    return document.cookie.split(';').some(c => {
+        return c.trim().startsWith(name + '=');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var banner = document.querySelector('.banner-container')
+
+    if(!getCookie('w2n-covid-banner-seen')) {
+      banner.classList.add('active')
+    }
+
+    banner.querySelector('#close').addEventListener('click', function() {
+      banner.classList.remove('active')
+      document.cookie = 'w2n-covid-banner-seen=true'
+    })
+
+    banner.querySelector('a').addEventListener('click', function(e) {
+      e.preventDefault();
+      var info = document.querySelector('#covid-scroll')
+      var offsetTop = info.offsetTop;
+
+      scroll({
+        top: offsetTop - window.innerHeight / 2,
+        behavior: "smooth"
+      });
+
+      setTimeout(function() {
+        info.parentElement.parentElement.parentElement.parentElement.firstElementChild.click()
+      }, 800)
+    })
+  });
+</script>
 <div class="wtn">
   <div class="texture"></div>
   <div class="splash">
