@@ -483,6 +483,19 @@
           background-repeat: no-repeat;
           background-position: center;
           aspect-ratio: 1;
+          @supports not (aspect-ratio: 1 / 1) {
+            &::before {
+              float: left;
+              padding-top: 100%;
+              content: "";
+            }
+
+            &::after {
+              display: block;
+              content: "";
+              clear: both;
+            }
+          }
         }
         .text-container {
           h4 {
@@ -542,6 +555,19 @@
       }
       a {
         aspect-ratio: 1;
+        @supports not (aspect-ratio: 1 / 1) {
+          &::before {
+            float: left;
+            padding-top: 100%;
+            content: "";
+          }
+
+          &::after {
+            display: block;
+            content: "";
+            clear: both;
+          }
+        }
         display: block;
         min-height: 200px;
         position: relative;
