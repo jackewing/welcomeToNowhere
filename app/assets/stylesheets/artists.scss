@@ -28,32 +28,36 @@ body {
         clear: both;
       }
     }
-    display: block;
     max-width: 600px;
+    display: none;
     @media screen and (min-width: 950px) {
-      display: none;
+      display: block;
       max-width: 700px;
       max-height: 550px;
     }
   }
   .img-container {
-    display: none;
-
-    @media screen and (min-width: 950px) {
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: top;
-      max-height: none;
-      min-width: 420px;
-      width: 40%;
-      padding-left: 0;
-      display: flex;
+    max-width: 500px;
+    &::before {
+      float: left;
+      padding-top: 100%;
+      content: "";
     }
+
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    padding-left: 0;
   }
   .text-container {
     padding: 50px;
-    padding-top: 30px;
-    padding-left: 10px;
+    padding-top: 15px;
+    padding-left: 00px;
     @media screen and (min-width: 950px) {
       padding-left: 50px;
       padding-top: 0px;
