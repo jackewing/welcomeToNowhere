@@ -41,14 +41,18 @@ body {
     padding: 50px;
     padding-top: 15px;
     padding-left: 00px;
+    * {
+      padding: 0.2rem 0;
+    }
     @media screen and (min-width: $breakpoint) {
       padding-left: 50px;
       padding-top: 0px;
       max-width: 750px;
+      * {
+        padding: 0.4rem 0;
+      }
     }
-    * {
-      padding: 0.4rem 0;
-    }
+
     h3 {
       font-family: Reckless Neue Light;
       font-weight: 300;
