@@ -5,39 +5,21 @@ body {
 }
 
 .show-artists {
-  padding: 20px;
+  padding: 15px;
+  min-height: 70vh;
   flex-direction: column;
-  min-height: 100vh;
-  padding-top: 80px;
-  @media screen and (min-width: 950px) {
-    padding: 50px;
+  padding-top: 70px;
+  @media screen and (min-width: $breakpoint) {
+    padding: 30px;
     flex-direction: row;
   }
-  img {
-    aspect-ratio: 1;
-    @supports not (aspect-ratio: 1 / 1) {
-      &::before {
-        float: left;
-        padding-top: 100%;
-        content: "";
-      }
 
-      &::after {
-        display: block;
-        content: "";
-        clear: both;
-      }
-    }
-    max-width: 600px;
-    display: none;
-    @media screen and (min-width: 950px) {
-      display: block;
-      max-width: 700px;
-      max-height: 550px;
-    }
-  }
   .img-container {
     max-width: 500px;
+    flex-shrink: 0;
+    @media screen and (min-width: $breakpoint) {
+      width: 500px;
+    }
     &::before {
       float: left;
       padding-top: 100%;
@@ -58,10 +40,13 @@ body {
     padding: 50px;
     padding-top: 15px;
     padding-left: 00px;
-    @media screen and (min-width: 950px) {
+    @media screen and (min-width: $breakpoint) {
       padding-left: 50px;
       padding-top: 0px;
       max-width: 750px;
+    }
+    * {
+      padding: 10px 0;
     }
     h3 {
       font-family: Reckless Neue Light;
@@ -71,6 +56,7 @@ body {
       letter-spacing: -0.03em;
       margin-top: 0;
       color: $black;
+      padding-top: 0;
     }
     p,
     a {

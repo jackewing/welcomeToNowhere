@@ -7,9 +7,8 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artists = artists
     @colours = colours
-    @index = params[:id].to_i
+    @artist = artists.find { |a| a[:name].parameterize == params[:id] }
     @background_colour = Colours.white
   end
 

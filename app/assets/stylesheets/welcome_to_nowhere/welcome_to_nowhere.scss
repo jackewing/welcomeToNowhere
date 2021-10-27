@@ -92,7 +92,7 @@
         text-align: right;
         padding: 0;
         margin: 0;
-        margin-top: 90px;
+        margin-top: 63px;
         margin-left: auto;
         @media screen and (max-width: $breakpoint) {
           margin-top: 58px;
@@ -194,6 +194,7 @@
           padding-left: 30px;
         }
         @media screen and (max-width: $breakpoint) {
+          margin-top: 0px;
           font-size: 18px;
           line-height: 33px;
           padding: 9px;
@@ -262,9 +263,9 @@
       cursor: pointer;
       margin-right: 45px;
       position: relative;
+      margin-bottom: 20px;
       @media screen and (max-width: $breakpoint) {
         text-align: right;
-        margin-bottom: 20px;
         margin-top: -50px;
       }
       &:after,
@@ -397,7 +398,6 @@
       text-align: left;
       @media screen and (max-width: $breakpoint) {
         font-size: 22px;
-        line-height: 33px;
       }
     }
     p.date {
@@ -454,7 +454,6 @@
       margin-top: 0;
       @media screen and (max-width: $breakpoint) {
         font-size: 22px;
-        line-height: 33px;
       }
     }
     .gallery-w2n-container {
@@ -503,7 +502,7 @@
           h4 {
             font-family: Surt Light;
             margin: 0;
-            padding: 10px 0;
+            padding: 15px 0 10px;
           }
           p {
             font-family: Surt Light;
@@ -533,13 +532,12 @@
       font-size: 26px;
       font-style: normal;
       font-weight: 300;
-      line-height: 72px;
+      line-height: 82px;
       letter-spacing: -0.01em;
       text-align: left;
       margin-top: 0;
       @media screen and (max-width: $breakpoint) {
         font-size: 22px;
-        line-height: 33px;
       }
     }
     .gallery-w2n-container {
