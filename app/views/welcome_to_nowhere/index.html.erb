@@ -53,8 +53,8 @@
     </div>
   </div>
   <div class="faqs">
-    <div>
-      <h3>FAQs</h3>
+    <div class="heading">
+      <h3 class="heading-h3">FAQs</h3>
       <p class="toggle-accordions">Open/Close all</p>
     </div>
     <% @faqs.each do |question| %>
@@ -171,7 +171,6 @@
       document
         .querySelector(".toggle-accordions")
         .addEventListener("click", function (e) {
-          e.target.nextElementSibling.classList.toggle("open");
           e.target.classList.toggle("open");
 
           document
