@@ -42,7 +42,7 @@ class Airtable
   def self.upcoming_acts
     Airrecord
       .table(ENV['airtable_key'], @table_id, 'Eyegum wednesday content')
-      .all
+      .all(sort: { 'Date' => 'asc' })
       .map(&:fields)
   end
 
