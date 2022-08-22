@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'airrecord'
 
+gem 'google-cloud-storage'
+
 gem 'rack-brotli'
 
 # Use Active Storage variant
@@ -55,6 +57,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

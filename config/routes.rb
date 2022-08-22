@@ -11,4 +11,8 @@ Rails
 
     get '/welcometonowhere', to: 'welcome_to_nowhere#index'
     get '/welcometonowhere/artists/:id', to: 'artists#show'
+
+    post '/webhook', to: 'webhook#index'
+
+    get '/migrate', to: 'application#migrate'
   end
