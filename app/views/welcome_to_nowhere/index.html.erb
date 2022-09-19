@@ -6,51 +6,55 @@
       <p>Aotearoa’s coolest little festival</p>
     </div>
     <div>
-      <p class="right">February 5-6 <br /> Waitangi Weekend <br /> 2022</p>
+      <p class="right">February 3-6 <br /> Waitangi Weekend <br /> 2023</p>
     </div>
-    <div class="star"></div>
-    <div class="sawmill-bladee"></div>
     <div class="arch">
       <div id="wtn-video"></div>
     </div>
   </div>
   <div class="main">
     <div class="left">
-      <a class="small" href="https://events.humanitix.com/welcome-to-nowhere-2022/tickets?w=true&p=%236621c0">
+      <!-- <a class="small" href="">
         Buy Tickets and Merch
         <span class="arrow"></span>
-      </a>
+      </a> -->
       <p>Aotearoa’s coolest little festival, located in the rural Manawatu, featuring both leading and up-and-coming
         independent
         artists from around the country. Join us for 2.5 days of music and art, among a welcoming community.</p>
-      <div class="img-sm-container">
+      <!-- <div class="img-sm-container">
         <div style="background-image: url(<%= @background_image %>)" class="image" alt="Welcome to Nowhere Poster">
         </div>
-      </div>
-      <a class="large" href="https://events.humanitix.com/welcome-to-nowhere-2022/tickets?w=true&p=%236621c0">
+      </div> -->
+      <!-- <a class="large" href="">
         Buy Tickets and Merch
         <span class="arrow"></span>
-      </a>
+      </a> -->
     </div>
-    <div class="right">
+    <!-- <div class="right">
       <div class="image" alt="Welcome to Nowhere Poster">
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="lineup">
-    <h3>Lineup</h3>
-    <div class="gallery-w2n-container">
+    <h3>Lineup Announcement Soon</h3>
+    <!-- <div class="gallery-w2n-container">
       <% @artists.each.with_index do |artist, index| %>
         <a href="/welcometonowhere/artists/<%= artist[:name].parameterize %>">
-        <div style="background-image: url(<%= artist[:image_url] %>)"></div>
-        <div class="text-container">
-          <h4><%= artist[:name] %></h4>
-          <p><%= artist[:city] %></p>
-          <p><%= artist[:genre] %></p>
-        </div>
+          <div style="background-image: url(<%= artist[:image_url] %>)"></div>
+          <div class="text-container">
+            <h4>
+              <%= artist[:name] %>
+            </h4>
+            <p>
+              <%= artist[:city] %>
+            </p>
+            <p>
+              <%= artist[:genre] %>
+            </p>
+          </div>
         </a>
         <% end %>
-    </div>
+    </div> -->
   </div>
   <div class="faqs">
     <div class="heading">
@@ -82,17 +86,16 @@
     <h3>Gallery</h3>
     <div class="gallery-w2n-container">
       <% @gallery.each do |image| %>
-        <a href="<%= image[:image_url] %>" title="<%= image[:name] %>"
-          data-src="<%= image[:image_url] %>">
+        <a href="<%= image[:image_url] %>" title="<%= image[:name] %>" data-src="<%= image[:image_url] %>">
         </a>
         <% end %>
     </div>
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      [].forEach.call(document.querySelectorAll('.gallery a[data-src]'), function(div) {
-        div.setAttribute("style","background-image: url(" + div.getAttribute('data-src') + ");");
-        div.onload = function() {
+      [].forEach.call(document.querySelectorAll('.gallery a[data-src]'), function (div) {
+        div.setAttribute("style", "background-image: url(" + div.getAttribute('data-src') + ");");
+        div.onload = function () {
           div.removeAttribute('data-src');
         };
       });
