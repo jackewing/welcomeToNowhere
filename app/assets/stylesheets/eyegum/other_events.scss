@@ -1,0 +1,11 @@
+.other-events {
+  .coming-up {
+    .act {
+      .top.open {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}

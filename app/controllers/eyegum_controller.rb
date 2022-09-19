@@ -21,7 +21,12 @@ class EyegumController < ApplicationController
   end
 
   def other_events
-    @background_colour = Colours.avocado
+    @background_colour = Colours.white
+
+    @other_events_content =
+      Airtable
+        .fetch(:other_events_content)
+        .filter { |act| act['Event title'].present? }
   end
 
   def about_us

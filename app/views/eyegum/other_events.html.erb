@@ -1,9 +1,35 @@
-<div class="eyegum wednesdays about-us">
-  <div class="splash" style="background-color: <%= @background_colour %>;">
-    <div class="left">
-      <h1>
-        There are no other events on at the moment, check back soon!
-      </h1>
+<div class="eyegum wednesdays about-us other-events">
+   <div class="coming-up" style="background-color: <%= @background_colour %>;">
+    <h3>Great Sounds Great</h3>
+    <% @other_events_content.each do |act| %>
+      <div class="act">
+        <div class="top open">
+          <p class='date'>
+            <%= act['Date'] %>
+          </p>
+          <p class="large">
+            <%= act['Address'] %>
+          </p>
+        </div>
+
+        <div class="bottom open">
+          <div class="about">
+            <p class="large">
+              <%= act['Address'] %>
+            </p>
+            <p>
+              <%= act['Insert short caption about event'].present? && act['Insert short caption about event'].html_safe %>
+            </p>
+            <p>
+              <%= act['Buy tickets'].present? && act['Buy tickets'].html_safe %>
+            </p>
+          </div>
+          <% if Airtable.image(act, 'Poster' ) %>
+            <img src="<%= Airtable.image(act, 'Poster') %>" />
+            <% end %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

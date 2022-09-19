@@ -119,6 +119,13 @@ class Airtable
       end
   end
 
+  def self.other_events_content
+    Airrecord
+      .table(ENV['airtable_key'], @table_id, 'Other events content')
+      .all
+      .map(&:fields)
+  end
+
   private
 
   def self.image(record, identifier)
