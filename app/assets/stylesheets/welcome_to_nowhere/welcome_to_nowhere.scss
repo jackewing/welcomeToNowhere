@@ -321,7 +321,7 @@
     }
 
     .top {
-      background: #E6F4AB;
+      background: #e6f4ab;
       padding-left: 15px;
       cursor: pointer;
       border-bottom: 2px solid $black;
@@ -514,7 +514,7 @@
       }
 
       @media screen and (min-width: 1300px) {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
       }
 
       a {
@@ -561,6 +561,10 @@
             font-size: 14px;
             margin: 0;
             padding-left: 0;
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       }
