@@ -1,24 +1,14 @@
-# README
+## Set up
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+install whatever you need to run ruby on rails on your system
+ruby 2.7.6, postgres etc
 
-Things you may want to cover:
+```
+gem install bundler
 
-* Ruby version
+bundle install
 
-* System dependencies
+bundle exec rake db:create db:migrate
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bundle exec bin/rails server
+```
